@@ -104,10 +104,9 @@ pipeline {
                     '''
                 }
             }
-        }         
-    }
-    
-    stage('Deploy app on EC2-cloud Production') {
+        } 
+        
+        stage('Deploy app on EC2-cloud Production') {
         agent any
         when{
             expression{ GIT_BRANCH == 'origin/master'}
@@ -129,6 +128,9 @@ pipeline {
             }
         }
     }
+    }
+    
+    
     
     post {
         success{
